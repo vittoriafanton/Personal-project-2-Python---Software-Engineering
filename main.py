@@ -4,11 +4,15 @@ from random import randint
 def create_mathformula(n):   # to create the final expression that will be evaluated
     operations = ['+', '-', '*', '/']  # possible operators
     mathformula = ""
-    for k in range(n-1):
-        number1 = randint(0, 100)  # defining a random number between 1 and 100
-        number2 = randint(0, 100)
-        op = operations[randint(0, 3)]  # defining a random operation between the ones in the array
-        mathformula += f"{number1} {op} {number2}"  # obtaining a new part of the expression
+    for k in range(n):
+        if k != n-1:
+            number1 = randint(0, 100)  # defining a random number between 1 and 100
+            number2 = randint(0, 100)
+            op = operations[randint(0, 3)]  # defining a random operation between the ones in the array
+            mathformula += f"{number1} {op} "  # obtaining a new part of the expression
+        else:
+            number = randint(0, 100)
+            mathformula += f"{number} "
     return mathformula
 
 
